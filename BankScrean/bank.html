@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bank page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <header>
+      <h1
+        class="text-center pt-7 mt-20 text-5xl text-slate-500 hover:text-blue-600"
+      >
+        Our Private Bank !!!
+      </h1>
+    </header>
+    <main>
+      <!-- Blance and transection sammary -->
+      <section class="mt-8">
+        <div class="grid grid-cols-3 gap-4 w-3/4 mx-auto text-white">
+          <div class="bg-yellow-400 p-8 rounded-lg">
+            <h4 class="text-3xl">Deposit</h4>
+            <h2 class="text-5xl font-medium">
+              $<span id="deposit-total">00</span>
+            </h2>
+          </div>
+          <div class="bg-blue-600 p-8 rounded-lg">
+            <h4 class="text-3xl">Widthdraw</h4>
+            <h2 class="text-5xl font-medium">
+              $ <span id="widthdraw-total">00</span>
+            </h2>
+          </div>
+          <div class="bg-red-500 p-8 rounded-lg">
+            <h4 class="text-3xl">Blance</h4>
+            <h2 class="text-5xl font-medium">
+              <span id="total-blance">1240</span>
+            </h2>
+          </div>
+        </div>
+      </section>
+      <!-- widthdraw and Deposit section  -->
+      <section class="w-3/4 mx-auto">
+        <div class="grid grid-cols-2 gap-4 mt-9">
+          <div class="bg-green-900 p-8 rounded-lg">
+            <h3 class="text-3xl text-white mb-4">Your Deposit</h3>
+            <input
+              id="input-field"
+              class="rounded-block w-3/4 px-4 py-3"
+              type="text"
+              placeholder="Amount You Want to Deposit"
+            />
+            <button
+              class="bg-blue-800 text-white rounded-lg px-2 py-3 mt-4 font-medium hover:bg-blue-600"
+            >
+              Submit
+            </button>
+          </div>
+          <div class="bg-purple-900 p-8 rounded-lg">
+            <h3 class="text-3xl text-white mb-4">Your Widthdraw</h3>
+            <input
+              id="input-field"
+              class="rounded-block w-3/4 px-4 py-3"
+              type="text"
+              placeholder="Amount You Want to Widthdraw"
+            />
+            <button
+              class="bg-yellow-500 text-white font-medium hover:bg-yellow-800 rounded-lg px-2 py-3 mt-4"
+            >
+              Submit
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
