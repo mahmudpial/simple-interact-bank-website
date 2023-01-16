@@ -20,8 +20,14 @@ document.getElementById("btn-withdraw").addEventListener("click", function () {
   const newWithdrawAmountString = withdrawField.value;
   const newWithdrawAmount = parseFloat(newWithdrawAmountString);
 
-  // step-3
+  // step -3
+
   withdrawField.value = "";
+
+  if (isNaN(newWithdrawAmount)) {
+    alert("Please Enter A Valid Number");
+    return;
+  }
 
   // step-4
   const withdrawTotalElement = document.getElementById("withdraw-total");
@@ -29,20 +35,20 @@ document.getElementById("btn-withdraw").addEventListener("click", function () {
   const previousWithdrawTotal = parseFloat(previousWithdrawTotalString);
 
   // step-5
-  const newWithdrawTotal = previousWithdrawTotal + newWithdrawAmount;
-  withdrawTotalElement.innerText = newWithdrawTotal;
-
-  // step-6
-  const balanceElement = document.getElementById("total-balance");
-  const previousBalanceTotalString = balanceElement.innerText;
+  const balanceTotalElement = document.getElementById("total-balance");
+  const previousBalanceTotalString = balanceTotalElement.innerText;
   const previousBalanceTotal = parseFloat(previousBalanceTotalString);
 
-  if (newWithdrawTotal <= previousBalanceTotal) {
-    // step-7
-    const newBalanceTotal = previousBalanceTotal - newWithdrawAmount;
-    balanceElement.innerText = newBalanceTotal;
-  } else {
-  }
+  // step-6
 
-  // step
+  if (newWithdrawAmount > previousBalanceTotal) {
+    alert("SORRY!! Insaficent Balance");
+    return;
+  }
+  // step-7
+  const currentWithdrawTotal = previousWithdrawTotal + newWithdrawAmount;
+  withdrawTotalElement.innerText = currentWithdrawTotal;
+  // step-8
+  const newBalanceTotal = previousBalanceTotal - newWithdrawAmount;
+  balanceTotalElement.innerText = newBalanceTotal;
 });
